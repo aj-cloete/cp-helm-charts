@@ -104,13 +104,13 @@ Clone the Confluent Helm Chart repo
 
 .. code:: sh
 
-      > helm repo add confluentinc https://confluentinc.github.io/cp-helm-charts/
-    "confluentinc" has been added to your repositories
+      > helm repo add ajcloete https://aj-cloete.github.io/cp-helm-charts
+    "ajcloete" has been added to your repositories
 
       > helm repo update
     Hang tight while we grab the latest from your chart repositories...
     ...Skip local chart repository
-    ...Successfully got an update from the "confluentinc" chart repository
+    ...Successfully got an update from the "ajcloete" chart repository
     ...Successfully got an update from the "stable" chart repository
     Update Complete. ⎈ Happy Helming!⎈
 
@@ -122,14 +122,14 @@ in the remainder of the documentation.
 
 .. code:: sh
 
-      helm install confluentinc/cp-helm-charts --name my-confluent-oss
+      helm install ajcloete/cp-helm-charts --name my-confluent-oss
 
 If you want to install without the Confluent Schema Registry instance,
 the REST Proxy instance, and the Kafka Connect worker:
 
 .. code:: sh
 
-      helm install --set cp-schema-registry.enabled=false,cp-kafka-rest.enabled=false,cp-kafka-connect.enabled=false confluentinc/cp-helm-charts
+      helm install --set cp-schema-registry.enabled=false,cp-kafka-rest.enabled=false,cp-kafka-connect.enabled=false ajcloete/cp-helm-charts
 
 View the installed Helm releases:
 

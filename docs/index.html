@@ -732,9 +732,9 @@ Open Source Helm charts are not supported by Confluent.
 <div class="listingblock">
 <div class="title">Installing helm chart</div>
 <div class="content">
-<pre class="rouge highlight"><code data-lang="bash">helm repo add confluentinc https://confluentinc.github.io/cp-helm-charts/   <i class="conum" data-value="1"></i><b>(1)</b>
+<pre class="rouge highlight"><code data-lang="bash">helm repo add ajcloete https://aj-cloete.github.io/cp-helm-charts   <i class="conum" data-value="1"></i><b>(1)</b>
 helm repo update    <i class="conum" data-value="2"></i><b>(2)</b>
-helm <span class="nb">install </span>confluentinc/cp-helm-charts <span class="nt">--name</span> my-confluent <span class="nt">--version</span> 0.6.0    <i class="conum" data-value="3"></i><b>(3)</b></code></pre>
+helm <span class="nb">install </span>ajcloete/cp-helm-charts <span class="nt">--name</span> my-confluent <span class="nt">--version</span> 0.6.0    <i class="conum" data-value="3"></i><b>(3)</b></code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -961,13 +961,13 @@ The <code>StatefulSets+</code> are going to use <code>emptyDir</code> volumes, t
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="sh"><span class="o">&gt;</span> helm repo add confluentinc https://confluentinc.github.io/cp-helm-charts/
-<span class="s2">"confluentinc"</span> has been added to your repositories
+<pre class="rouge highlight"><code data-lang="sh"><span class="o">&gt;</span> helm repo add ajcloete https://aj-cloete.github.io/cp-helm-charts
+<span class="s2">"ajcloete"</span> has been added to your repositories
 
 <span class="o">&gt;</span> helm repo update
 Hang tight <span class="k">while </span>we grab the latest from your chart repositories...
 ...Skip <span class="nb">local </span>chart repository
-...Successfully got an update from the <span class="s2">"confluentinc"</span> chart repository
+...Successfully got an update from the <span class="s2">"ajcloete"</span> chart repository
 ...Successfully got an update from the <span class="s2">"stable"</span> chart repository
 Update Complete. ⎈ Happy Helming!⎈</code></pre>
 </div>
@@ -990,7 +990,7 @@ Otherwise, helm will generate release name.
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="sh">helm <span class="nb">install </span>confluentinc/cp-helm-charts <span class="nt">--name</span> my-confluent-oss</code></pre>
+<pre class="rouge highlight"><code data-lang="sh">helm <span class="nb">install </span>ajcloete/cp-helm-charts <span class="nt">--name</span> my-confluent-oss</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -998,7 +998,7 @@ Otherwise, helm will generate release name.
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="sh">helm <span class="nb">install</span> <span class="nt">--set</span> cp-schema-registry.enabled<span class="o">=</span><span class="nb">false</span>,cp-kafka-rest.enabled<span class="o">=</span><span class="nb">false</span>,cp-kafka-connect.enabled<span class="o">=</span><span class="nb">false </span>confluentinc/cp-helm-charts</code></pre>
+<pre class="rouge highlight"><code data-lang="sh">helm <span class="nb">install</span> <span class="nt">--set</span> cp-schema-registry.enabled<span class="o">=</span><span class="nb">false</span>,cp-kafka-rest.enabled<span class="o">=</span><span class="nb">false</span>,cp-kafka-connect.enabled<span class="o">=</span><span class="nb">false </span>ajcloete/cp-helm-charts</code></pre>
 </div>
 </div>
 <div class="paragraph">
