@@ -20,7 +20,7 @@ CAUTION: Open Source Helm charts are not supported by Confluent.
 
 toc::[]
 
-The https://github.com/confluentinc/cp-helm-charts[Confluent Platform Helm Charts] enable you to deploy Confluent Platform components on Kubernetes for development, test, and proof of concept environments.
+The https://github.com/aj-cloete/cp-helm-charts[Confluent Platform Helm Charts] enable you to deploy Confluent Platform components on Kubernetes for development, test, and proof of concept environments.
 
 == Installation
 

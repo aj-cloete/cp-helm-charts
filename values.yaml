@@ -66,6 +66,9 @@ cp-kafka:
   #   memory: 128Mi
   securityContext: 
     runAsUser: 0
+  # make the brokers reachable from the host machine for local development environments.  Default is true
+  nodeport:
+    enabled: true
 
 ## ------------------------------------------------------
 ## Schema Registry
