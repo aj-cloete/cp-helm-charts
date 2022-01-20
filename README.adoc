@@ -27,11 +27,11 @@ The https://github.com/aj-cloete/cp-helm-charts[Confluent Platform Helm Charts] 
 [source,bash]
 .Installing helm chart
 ----
-helm repo add confluentinc https://confluentinc.github.io/cp-helm-charts/   #<1>
+helm repo add ajcloete https://aj-cloete.github.io/cp-helm-charts   #<1>
 helm repo update    #<2>
-helm install confluentinc/cp-helm-charts --name my-confluent --version 0.6.0    #<3>
+helm install ajcloete/cp-helm-charts --name my-confluent --version 0.6.0    #<3>
 ----
-<1> Add `confluentinc` helm charts repo
+<1> Add `ajcloete` helm charts repo
 <2> Update repo information 
 <3> Install Confluent Platform with release name «my-confluent» and version `0.6.0` 
 
@@ -137,13 +137,13 @@ Clone the Confluent Helm Chart repo
 
 [source,sh]
 ----
-> helm repo add confluentinc https://confluentinc.github.io/cp-helm-charts/
-"confluentinc" has been added to your repositories
+> helm repo add ajcloete https://aj-cloete.github.io/cp-helm-charts
+"ajcloete" has been added to your repositories
 
 > helm repo update
 Hang tight while we grab the latest from your chart repositories...
 ...Skip local chart repository
-...Successfully got an update from the "confluentinc" chart repository
+...Successfully got an update from the "ajcloete" chart repository
 ...Successfully got an update from the "stable" chart repository
 Update Complete. ⎈ Happy Helming!⎈
 ----
@@ -155,14 +155,14 @@ Otherwise, helm will generate release name.
 
 [source,sh]
 ----
-helm install confluentinc/cp-helm-charts --name my-confluent-oss
+helm install ajcloete/cp-helm-charts --name my-confluent-oss
 ----
 
 If you want to install without the Confluent Schema Registry instance, the REST Proxy instance, and the Kafka Connect worker:
 
 [source,sh]
 ----
-helm install --set cp-schema-registry.enabled=false,cp-kafka-rest.enabled=false,cp-kafka-connect.enabled=false confluentinc/cp-helm-charts
+helm install --set cp-schema-registry.enabled=false,cp-kafka-rest.enabled=false,cp-kafka-connect.enabled=false ajcloete/cp-helm-charts
 ----
 
 View the installed Helm releases:
