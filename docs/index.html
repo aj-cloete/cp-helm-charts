@@ -776,7 +776,7 @@ It&#8217;s not officially supported repo, hence support is on <em>"best effort"<
 <div class="ulist">
 <ul>
 <li>
-<p>Report all enhancements, bugs, and tasks as <a href="https://github.com/confluentinc/cp-helm-charts/issues">GitHub issues</a></p>
+<p>Report all enhancements, bugs, and tasks as <a href="https://github.com/aj-cloete/cp-helm-charts/issues">GitHub issues</a></p>
 </li>
 <li>
 <p>Provide fixes or enhancements by opening pull requests in GitHub</p>
@@ -853,7 +853,7 @@ Platform services:</p>
 </td>
 <td class="content">
 This guide assumes that you&#8217;re Helm 2 (tested with Helm <code>2.16</code>).
-You can follow up on Helm 3 issues in <a href="https://github.com/confluentinc/cp-helm-charts/issues/480" class="bare">https://github.com/confluentinc/cp-helm-charts/issues/480</a>
+You can follow up on Helm 3 issues in <a href="https://github.com/aj-cloete/cp-helm-charts/issues/480" class="bare">https://github.com/aj-cloete/cp-helm-charts/issues/480</a>
 </td>
 </tr>
 </table>
@@ -905,7 +905,7 @@ helm init <span class="nt">--service-account</span> tiller <span class="nt">--up
 <h3 id="persistence"><a class="anchor" href="#persistence"></a>Persistence</h3>
 <div class="paragraph">
 <p>The ZooKeeper and Kafka cluster deployed with <code>StatefulSets</code> that have a <code>volumeClaimTemplate</code> which provides the persistent volume for each replica.
-You can define the size of the volumes by changing <code>dataDirSize</code> and <code>dataLogDirSize</code> under <code>cp-zookeeper</code> and <code>size</code> under <code>cp-kafka</code> in <a href="https://github.com/confluentinc/cp-helm-charts/blob/master/values.yaml">values.yaml</a>.</p>
+You can define the size of the volumes by changing <code>dataDirSize</code> and <code>dataLogDirSize</code> under <code>cp-zookeeper</code> and <code>size</code> under <code>cp-kafka</code> in <a href="https://github.com/aj-cloete/cp-helm-charts/blob/master/values.yaml">values.yaml</a>.</p>
 </div>
 <div class="paragraph">
 <p>You also could use the cloud provider&#8217;s volumes by specifying <a href="https://kubernetes.io/docs/concepts/storage/storage-classes/">StorageClass</a>.
@@ -935,10 +935,10 @@ To adapt this example to your needs, read the Kubernetes <a href="https://kubern
 </table>
 </div>
 <div class="paragraph">
-<p>The <code>StorageClass</code> that was created can be specified in <code>dataLogDirStorageClass</code> and <code>dataDirStorageClass</code> under <code>cp-zookeeper</code> and in <code>storageClass+</code> under <code>cp-kafka</code> in <a href="https://github.com/confluentinc/cp-helm-charts/blob/master/values.yaml">values.yaml</a>.</p>
+<p>The <code>StorageClass</code> that was created can be specified in <code>dataLogDirStorageClass</code> and <code>dataDirStorageClass</code> under <code>cp-zookeeper</code> and in <code>storageClass+</code> under <code>cp-kafka</code> in <a href="https://github.com/aj-cloete/cp-helm-charts/blob/master/values.yaml">values.yaml</a>.</p>
 </div>
 <div class="paragraph">
-<p>To deploy non-persistent Kafka and ZooKeeper clusters, you must change  the value of <code>persistence.enabled</code> under <code>cp-kafka</code> and <code>cp-zookeeper</code> in <a href="https://github.com/confluentinc/cp-helm-charts/blob/master/values.yaml">values.yaml</a></p>
+<p>To deploy non-persistent Kafka and ZooKeeper clusters, you must change  the value of <code>persistence.enabled</code> under <code>cp-kafka</code> and <code>cp-zookeeper</code> in <a href="https://github.com/aj-cloete/cp-helm-charts/blob/master/values.yaml">values.yaml</a></p>
 </div>
 <div class="admonitionblock warning">
 <table>
@@ -1099,7 +1099,7 @@ Press <span class="keyseq"><kbd>Ctrl</kbd>+<kbd>C</kbd></span> to stop consuming
 <h5 id="zookeepers"><a class="anchor" href="#zookeepers"></a>Zookeepers</h5>
 <div class="listingblock">
 <div class="content">
-<pre>git clone https://github.com/confluentinc/cp-helm-charts.git        <i class="conum" data-value="1"></i><b>(1)</b>
+<pre>git clone https://github.com/aj-cloete/cp-helm-charts.git        <i class="conum" data-value="1"></i><b>(1)</b>
 kubectl apply -f cp-helm-charts/examples/zookeeper-client.yaml      <i class="conum" data-value="2"></i><b>(2)</b>
 ...
 kubectl exec -it zookeeper-client -- /bin/bash zookeeper-shell &lt;zookeeper service&gt;:&lt;port&gt; ls /brokers/ids       <i class="conum" data-value="3"></i><b>(3)</b>
@@ -1173,7 +1173,7 @@ kafka-consumer-perf-test <span class="nt">--broker-list</span> <span class="nv">
 <h4 id="run-a-streams-application"><a class="anchor" href="#run-a-streams-application"></a>Run A Streams Application</h4>
 <div class="paragraph">
 <p>ksqlDB is the streaming SQL engine that enables real-time data  processing against Apache Kafka.
-Now that you have running in your Kubernetes cluster, you may run a <a href="https://github.com/confluentinc/cp-helm-charts/blob/master/examples/ksql-demo.yaml">ksqlDB example</a>.</p>
+Now that you have running in your Kubernetes cluster, you may run a <a href="https://github.com/aj-cloete/cp-helm-charts/blob/master/examples/ksql-demo.yaml">ksqlDB example</a>.</p>
 </div>
 </div>
 </div>
@@ -1280,7 +1280,7 @@ helm <span class="nb">install </span>stable/grafana</code></pre>
 <p>Add Prometheus as Data Source in Grafana, url should be something  like: <code>http://illmannered-marmot-prometheus-server:9090</code></p>
 </li>
 <li>
-<p>Import dashboard under <a href="https://github.com/confluentinc/cp-helm-charts/blob/master/grafana-dashboard/confluent-open-source-grafana-dashboard.json">grafana-dashboard</a> into Grafana <span class="image"><img src="screenshots/kafka.png" alt="Kafka Dashboard"></span>
+<p>Import dashboard under <a href="https://github.com/aj-cloete/cp-helm-charts/blob/master/grafana-dashboard/confluent-open-source-grafana-dashboard.json">grafana-dashboard</a> into Grafana <span class="image"><img src="screenshots/kafka.png" alt="Kafka Dashboard"></span>
 <span class="image"><img src="screenshots/zookeeper.png" alt="ZooKeeper Dashboard"></span></p>
 </li>
 </ol>

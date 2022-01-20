@@ -41,7 +41,7 @@ We welcome any contributions:
 
 NOTE: It's not officially supported repo, hence support is on __"best effort"__ basis.
 
-* Report all enhancements, bugs, and tasks as https://github.com/confluentinc/cp-helm-charts/issues[GitHub issues]
+* Report all enhancements, bugs, and tasks as https://github.com/aj-cloete/cp-helm-charts/issues[GitHub issues]
 * Provide fixes or enhancements by opening pull requests in GitHub
 
 == Documentation
@@ -74,7 +74,7 @@ These Helm charts have been tested with the following software versions:
 * https://hub.docker.com/u/confluentinc/[Confluent Platform Docker Images]
 
 WARNING: This guide assumes that you're Helm 2 (tested with Helm `2.16`).
-You can follow up on Helm 3 issues in https://github.com/confluentinc/cp-helm-charts/issues/480
+You can follow up on Helm 3 issues in https://github.com/aj-cloete/cp-helm-charts/issues/480
 
 For local Kubernetes installation with Minikube, see <<create-local-minikube>>.
 
@@ -106,7 +106,7 @@ helm init --service-account tiller --upgrade
 === Persistence
 
 The ZooKeeper and Kafka cluster deployed with `StatefulSets` that have a `volumeClaimTemplate` which provides the persistent volume for each replica.
-You can define the size of the volumes by changing `dataDirSize` and `dataLogDirSize` under `cp-zookeeper` and `size` under `cp-kafka` in https://github.com/confluentinc/cp-helm-charts/blob/master/values.yaml[values.yaml].
+You can define the size of the volumes by changing `dataDirSize` and `dataLogDirSize` under `cp-zookeeper` and `size` under `cp-kafka` in https://github.com/aj-cloete/cp-helm-charts/blob/master/values.yaml[values.yaml].
 
 You also could use the cloud provider's volumes by specifying https://kubernetes.io/docs/concepts/storage/storage-classes/[StorageClass].
 For example, if you are on AWS your storage class will look like this:
@@ -124,9 +124,9 @@ parameters:
 
 NOTE: To adapt this example to your needs, read the Kubernetes https://kubernetes.io/docs/concepts/storage/storage-classes/#parameters[StorageClass] documentation.
 
-The `StorageClass` that was created can be specified in `dataLogDirStorageClass` and `dataDirStorageClass` under `cp-zookeeper` and in `storageClass+` under `cp-kafka` in https://github.com/confluentinc/cp-helm-charts/blob/master/values.yaml[values.yaml].
+The `StorageClass` that was created can be specified in `dataLogDirStorageClass` and `dataDirStorageClass` under `cp-zookeeper` and in `storageClass+` under `cp-kafka` in https://github.com/aj-cloete/cp-helm-charts/blob/master/values.yaml[values.yaml].
 
-To deploy non-persistent Kafka and ZooKeeper clusters, you must change  the value of `persistence.enabled` under `cp-kafka` and `cp-zookeeper` in https://github.com/confluentinc/cp-helm-charts/blob/master/values.yaml[values.yaml]
+To deploy non-persistent Kafka and ZooKeeper clusters, you must change  the value of `persistence.enabled` under `cp-kafka` and `cp-zookeeper` in https://github.com/aj-cloete/cp-helm-charts/blob/master/values.yaml[values.yaml]
 
 WARNING: These type of clusters are suitable for *strictly* development and testing  purposes.
 The `StatefulSets+` are going to use `emptyDir` volumes, this means that its content strictly related to the pod life cycle and is deleted when the pod goes down.
@@ -226,7 +226,7 @@ Press kbd:[Ctrl + C] to stop consuming.
 ===== Zookeepers
 
 ----
-git clone https://github.com/confluentinc/cp-helm-charts.git        #<1>
+git clone https://github.com/aj-cloete/cp-helm-charts.git        #<1>
 kubectl apply -f cp-helm-charts/examples/zookeeper-client.yaml      #<2>
 ...
 kubectl exec -it zookeeper-client -- /bin/bash zookeeper-shell <zookeeper service>:<port> ls /brokers/ids       #<3>
@@ -270,7 +270,7 @@ kafka-consumer-perf-test --broker-list $KAFKAS --messages 6000000 --threads 1 --
 ==== Run A Streams Application
 
 ksqlDB is the streaming SQL engine that enables real-time data  processing against Apache Kafka.
-Now that you have running in your Kubernetes cluster, you may run a https://github.com/confluentinc/cp-helm-charts/blob/master/examples/ksql-demo.yaml[ksqlDB example].
+Now that you have running in your Kubernetes cluster, you may run a https://github.com/aj-cloete/cp-helm-charts/blob/master/examples/ksql-demo.yaml[ksqlDB example].
 
 === Operations
 
@@ -334,7 +334,7 @@ helm install stable/grafana
 ----
 
 . Add Prometheus as Data Source in Grafana, url should be something  like: `+http://illmannered-marmot-prometheus-server:9090+`
-. Import dashboard under https://github.com/confluentinc/cp-helm-charts/blob/master/grafana-dashboard/confluent-open-source-grafana-dashboard.json[grafana-dashboard] into Grafana image:screenshots/kafka.png[Kafka Dashboard]
+. Import dashboard under https://github.com/aj-cloete/cp-helm-charts/blob/master/grafana-dashboard/confluent-open-source-grafana-dashboard.json[grafana-dashboard] into Grafana image:screenshots/kafka.png[Kafka Dashboard]
 image:screenshots/zookeeper.png[ZooKeeper Dashboard]
 
 === Teardown

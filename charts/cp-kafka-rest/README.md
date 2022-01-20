@@ -22,7 +22,7 @@ This chart bootstraps a deployment of a Confluent REST Proxy
 ### Install along with cp-helm-charts
 
 ```console
-git clone https://github.com/confluentinc/cp-helm-charts.git
+git clone https://github.com/aj-cloete/cp-helm-charts.git
 helm install cp-helm-charts
 ```
 
